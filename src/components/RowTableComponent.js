@@ -3,20 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ButtonGroup, Button } from "react-bootstrap";
 
 export default function RowTableComponent({ obj, setObjDelete, setObjUpdate }) {
-  const [cell, setCell] = useState("false");
+  const [cell, setCell] = useState(false);
   const [dynamicData, setDynamicData] = useState({});
 
-  const handleUpdate = (e) => {
-    setCell("true");
-  };
-
   const handleDelete = (e) => {
-    setCell("false");
+    setCell(false);
     setObjDelete(obj);
   };
 
   const handleSave = (e) => {
-    setCell("false");
+    setCell(false);
     setObjUpdate(dynamicData);
   };
 
@@ -49,7 +45,7 @@ export default function RowTableComponent({ obj, setObjDelete, setObjUpdate }) {
         </td>
         <td>
           <ButtonGroup aria-label="Basic example">
-            <Button variant="secondary" onClick={handleUpdate}>
+            <Button variant="secondary" onClick={() => setCell(!cell)}>
               Edit
             </Button>
             <Button variant="secondary" onClick={handleDelete}>
