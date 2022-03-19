@@ -30,7 +30,6 @@ export default function CrudApp(params) {
 
   useEffect(() => {
     console.log(database);
-  
   }, [database])
   
   const createData = (obj) => {
