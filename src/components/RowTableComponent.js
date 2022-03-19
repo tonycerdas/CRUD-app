@@ -4,7 +4,7 @@ import { ButtonGroup, Button } from "react-bootstrap";
 
 export default function RowTableComponent({ obj, setObjDelete, setObjUpdate }) {
   const [cell, setCell] = useState("false");
-  const [dinamicData, setDinamicData] = useState({});
+  const [dynamicData, setDynamicData] = useState({});
 
   const handleUpdate = (e) => {
     setCell("true");
@@ -17,11 +17,11 @@ export default function RowTableComponent({ obj, setObjDelete, setObjUpdate }) {
 
   const handleSave = (e) => {
     setCell("false");
-    setObjUpdate(dinamicData);
+    setObjUpdate(dynamicData);
   };
 
   const setObjProperties = (e) => {
-    setDinamicData({
+    setDynamicData({
       ...obj, //concatenacion de lo que tenía obj mas lo nuevo
       [e.target.headers]: e.target.innerText,
     });
