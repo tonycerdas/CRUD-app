@@ -16,7 +16,6 @@ export default function FormComponent({ data, setDatabase }) {
           : el
       )
     );
-    console.log(data);
   }, [objUpdate]);
 
   useEffect(() => {

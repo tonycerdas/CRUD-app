@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormComponent from "./FormComponent";
 import TableComponent from "./TableComponent";
 
@@ -27,19 +27,21 @@ const PersonData = [
 
 export default function CrudApp(params) {
   const [database, setDatabase] = useState(PersonData);
+
+  useEffect(() => {
+    console.log(database);
+  
+  }, [database])
+  
   const createData = (obj) => {
     setDatabase([...database, obj]);
   };
-  const updateData = (obj) => {};
-  const deleteData = (obj) => {};
 
   return (
     <>
       <FormComponent create={createData}></FormComponent>
       <TableComponent
         data={database}
-        delete={deleteData}
-        update={updateData}
         setDatabase={setDatabase}
       ></TableComponent>
     </>
